@@ -1,6 +1,8 @@
 {
     "name": "gloudemans/table-builder",
-    "description": "",
+    "description": "A simple table builder",
+    "keywords": ["table", "builder", "html"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Rob Gloudemans",
@@ -9,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.1.x"
+        "illuminate/support": "~4"
     },
     "require-dev": {
         "symfony/dom-crawler": "2.5.*@dev",
