@@ -1,0 +1,1 @@
+<table id="table-id" class="table-class"><thead><tr><th>name</th><th>email</th><th>created_at</th></tr></thead><tbody><tr><td>John Doe</td><td>john@doe.com</td><td>2014-01-01 01:01:00</td></tr></tbody></table>
