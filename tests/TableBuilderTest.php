@@ -17,7 +17,7 @@ class TableBuilderTest extends \PHPUnit_Framework_TestCase {
 			'created_at' => '2014-01-01 01:01:00'
 		);
 
-		$table = $this->builder->generate([$array]);
+		$table = $this->builder->generate(array($array));
 		$controlTable = file_get_contents(__DIR__.'/stubs/table-basic.stub');
 
 		$this->assertEquals($controlTable, $table, 'The control table doesn\'t match the generated table');
@@ -30,7 +30,7 @@ class TableBuilderTest extends \PHPUnit_Framework_TestCase {
 		$obj->email = 'john@doe.com';
 		$obj->created_at = '2014-01-01 01:01:00';
 
-		$table = $this->builder->generate([$obj]);
+		$table = $this->builder->generate(array($obj));
 		$controlTable = file_get_contents(__DIR__.'/stubs/table-basic.stub');
 
 		$this->assertEquals($controlTable, $table, 'The control table doesn\'t match the generated table');
@@ -46,7 +46,7 @@ class TableBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$collection = new Illuminate\Support\Collection($array);
 
-		$table = $this->builder->generate([$collection]);
+		$table = $this->builder->generate(array($collection));
 		$controlTable = file_get_contents(__DIR__.'/stubs/table-basic.stub');
 
 		$this->assertEquals($controlTable, $table, 'The control table doesn\'t match the generated table');
@@ -65,7 +65,7 @@ class TableBuilderTest extends \PHPUnit_Framework_TestCase {
 			'class' => 'table-class'
 		);
 
-		$table = $this->builder->generate([$array], $attributes);
+		$table = $this->builder->generate(array($array), $attributes);
 		$controlTable = file_get_contents(__DIR__.'/stubs/table-attributes.stub');
 
 		$crawler = new Symfony\Component\DomCrawler\Crawler($table);
@@ -89,7 +89,7 @@ class TableBuilderTest extends \PHPUnit_Framework_TestCase {
 			'created_at' => 'Date Created'
 		);
 
-		$table = $this->builder->generate([$array], null, $headers);
+		$table = $this->builder->generate(array($array), null, $headers);
 		$controlTable = file_get_contents(__DIR__.'/stubs/table-header.stub');
 
 		$crawler = new Symfony\Component\DomCrawler\Crawler($table);
